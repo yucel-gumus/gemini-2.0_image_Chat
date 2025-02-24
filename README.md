@@ -1,2 +1,2 @@
 #LİVE DEMO 
-https://yucelgumus.pythonanywhere.com/
+https://gemini-1-5-flash-flask.onrender.com
