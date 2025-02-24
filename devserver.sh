@@ -1,2 +1,2 @@
 #!/bin/sh
-python -m flask --app main run -p $PORT --debug
+python -m flask --app main run --host=0.0.0.0 -p $PORT
