@@ -10,12 +10,12 @@
  * Returns a generator function that streams the API response.
  * 
  * @param {Object} options - Configuration options
- * @param {string} options.model - The Gemini model to use (default: 'gemini-1.5-flash')
+ * @param {string} options.model - The Gemini model to use (default: 'gemini-2.0-flash')
  * @param {Array} options.contents - The contents array containing user messages
  * @returns {AsyncGenerator} A generator yielding text chunks from the API response
  */
 export async function* streamGemini({
-  model = 'gemini-1.5-flash',
+  model = 'gemini-2.0-flash',
   contents = [],
 } = {}) {
   try {

@@ -1,6 +1,6 @@
 # Gemini Görsel Analiz
 
-Gemini 1.5 Flash AI modeli ile görselleri yükleyip analiz edebileceğiniz web uygulaması.
+Gemini 2.0 Flash AI modeli ile görselleri yükleyip analiz edebileceğiniz web uygulaması.
 
 ## 🚀 Demo
 
@@ -9,7 +9,7 @@ Canlı demo: [https://gemini-1-5-flash-flask.onrender.com](https://gemini-1-5-fl
 ## ✨ Özellikler
 
 - Herhangi bir görseli yükleyip analiz edebilme
-- Gemini 1.5 Flash AI modeliyle görsel içeriğini anlama
+- Gemini 2.0 Flash AI modeliyle görsel içeriğini anlama
 - Türkçe dil desteği
 - Özelleştirilmiş sorular sorabilme
 - Görselleri temizleme ve yenilerini yükleme
@@ -58,7 +58,7 @@ python main.py
 ## 🧪 Teknolojiler
 
 - **Backend**: Flask, Python
-- **AI Model**: Google Gemini 1.5 Flash
+- **AI Model**: Google Gemini 2.0 Flash
 - **Frontend**: HTML, CSS, JavaScript
 - **API**: Google Generative AI API
 

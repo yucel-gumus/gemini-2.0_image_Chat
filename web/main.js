@@ -54,7 +54,7 @@ form.onsubmit = async (ev) => {
 
     // Call Gemini API with streaming response
     const stream = streamGemini({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.0-flash',
       contents,
     });
 
