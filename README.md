@@ -4,7 +4,7 @@ Gemini 2.0 Flash AI modeli ile görselleri yükleyip analiz edebileceğiniz web 
 
 ## 🚀 Demo
 
-Canlı demo: [https://gemini-1-5-flash-flask.onrender.com](https://gemini-1-5-flash-flask.onrender.com)
+Canlı demo: [https://flash.yucelgumus.dev/](https://flash.yucelgumus.dev/)
 
 ## ✨ Özellikler
 
