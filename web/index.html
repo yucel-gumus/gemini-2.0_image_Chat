@@ -1,32 +1,59 @@
 <!doctype html>
-<html lang="en">
+<html lang="tr">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gemini API</title>
+  <title>Gemini Görsel Analiz</title>
   <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/gemini.png" type="image/png">
+  <meta name="description" content="Gemini 1.5 ile görselleri analiz edin ve sorular sorun">
 </head>
 
 <body>
   <main>
-    <h1>Gemini API</h1>
+    <h1>Gemini Görsel Analiz</h1>
+    <div class="description">
+      <p>Bir görsel yükleyin ve Gemini AI'a soru sorun!</p>
+    </div>
+
     <form id="uploadForm">
       <div class="file-picker">
-        <label>
+        <label for="imageFile" class="file-label">
           <input type="file" id="imageFile" accept="image/*">
           <div id="imagePreview">
+            <div class="placeholder">Görsel Seçmek İçin Tıklayın</div>
           </div>
         </label>
       </div>
+      
+      <div class="button-row">
+        <button type="button" id="clearButton" class="secondary-button" disabled>Temizle</button>
+      </div>
+
       <div class="prompt-box">
         <label>
-          <input name="prompt" placeholder="Bana sor" type="text" value="Bu resimde ne var ?">
+          <span class="label-text">Görselle ilgili sorunu yaz:</span>
+          <input name="prompt" placeholder="Bu resimde ne var?" type="text" value="Bu resimde ne var?">
         </label>
-        <button type="submit">Sor</button>
+        <button type="submit" id="submitButton">Sor</button>
       </div>
     </form>
-    <p class="output">(Cevap Alanı)</p>
+
+    <div class="output-container">
+      <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+        <div class="spinner"></div>
+        <p>Yanıt bekleniyor...</p>
+      </div>
+      <div class="output-header">
+        <h3>Gemini'nin Yanıtı</h3>
+      </div>
+      <div class="output">(Henüz bir yanıt yok)</div>
+    </div>
+
+    <footer>
+      <p>Gemini 1.5 Flash ile çalışır &copy; 2024</p>
+    </footer>
   </main>
 
   <script src="https://unpkg.com/markdown-it@8.4.2/dist/markdown-it.min.js"></script>
