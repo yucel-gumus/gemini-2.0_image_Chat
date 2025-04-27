@@ -3,7 +3,7 @@ import os
 import logging
 from dotenv import load_dotenv
 import google.generativeai as genai
-from flask import Flask, jsonify, request, send_file, send_from_directory
+from flask import Flask, jsonify, request, send_file, send_from_directory, render_template
 from flask_cors import CORS
 
 # Load environment variables
@@ -29,7 +29,7 @@ CORS(app)  # Enable CORS for all routes
 @app.route("/")
 def index():
     """Serve the main HTML page"""
-    return send_file('web/index.html')
+    return render_template('index.html')
 
 
 @app.route("/api/generate", methods=["POST"])
@@ -61,12 +61,6 @@ def generate_api():
         except Exception as e:
             logger.error(f"Error generating content: {str(e)}")
             return jsonify({ "error": str(e) })
-
-
-@app.route('/<path:path>')
-def serve_static(path):
-    """Serve static files from the web directory"""
-    return send_from_directory('web', path)
 
 
 if __name__ == "__main__":
