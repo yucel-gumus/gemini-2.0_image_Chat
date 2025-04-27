@@ -13,23 +13,37 @@ API_KEY = os.getenv("API_KEY_GEMINI")
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+logger.info("Logging configured.")
 
 # Check if API key is available
 if not API_KEY or API_KEY == 'your_api_key_here':
-    logger.warning("API key not set. Please add your Gemini API key to the .env file.")
+    logger.warning("API key not set or is placeholder. Please check Railway Variables.")
+else:
+    logger.info("API key loaded successfully.")
 
 # Configure Gemini API
-genai.configure(api_key=API_KEY)
+try:
+    genai.configure(api_key=API_KEY)
+    logger.info("Gemini API configured successfully.")
+except Exception as e:
+    logger.error(f"Error configuring Gemini API: {str(e)}")
 
 # Initialize Flask app
 app = Flask(__name__)
+logger.info("Flask app initialized.")
 CORS(app)  # Enable CORS for all routes
+logger.info("CORS enabled.")
 
 
 @app.route("/")
 def index():
     """Serve the main HTML page"""
-    return render_template('index.html')
+    logger.info("Index route '/' accessed.")
+    try:
+        return render_template('index.html')
+    except Exception as e:
+        logger.error(f"Error rendering index.html: {str(e)}")
+        return "Error rendering page.", 500
 
 
 @app.route("/api/generate", methods=["POST"])
