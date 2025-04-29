@@ -2,10 +2,6 @@
 
 Gemini 2.0 Flash AI modeli ile görselleri yükleyip analiz edebileceğiniz web uygulaması.
 
-## 🚀 Demo
-
-Canlı demo: [https://flash.yucelgumus.dev/](https://flash.yucelgumus.dev/)
-
 ## ✨ Özellikler
 
 - Herhangi bir görseli yükleyip analiz edebilme
